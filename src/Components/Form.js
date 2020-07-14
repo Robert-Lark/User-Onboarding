@@ -4,57 +4,31 @@ import Email from "./Email.js";
 import Name from "./Name.js";
 import Password from "./Password.js";
 import TermsOfService from "./TermsOfService.js";
+import * as Yup from "yup";
+function Form(props) {
 
-function Form() {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 	};
-	
-	const defaultState = { name: "", email: "", password: "" };
-	const [email, setEmail] = useState(defaultState);
-	const [name, setName] = useState(defaultState);
-	const [password, setPassword] = useState(defaultState);
-	const [TOS, setTOS] = useState("");
-
-	const handleChangeEmail = (event) => {
-		setEmail({
-			...email,
-			[event.target.email]: event.target.value,
-		});
-	};
-	const handleChangePassword = (event) => {
-		setPassword({
-			...password,
-			[event.target.password]: event.target.value,
-		});
-	};
-	const handleChangeTOS = (event) => {
-		setTOS({
-			...TOS,
-			[event.target.TOS]: event.target.value,
-		});
-	};
-	const handleChangeName = (event) => {
-		setName({
-			...name,
-			[event.target.name]: event.target.value,
-		});
-	};
-
+	 useEffect(() => {
+			formEmailSchema.isValid(formState).then((valid) => {
+				setButtonDisabled(!valid);
+			});
+		}, [formState]);
 	return (
 		<div className="App">
 			<form onSubmit={handleSubmit}>
-				<Name logEvent={handleChangeName} />
+				<Name />
 				<br />
-				<Email logEvent={handleChangeEmail} />
+				<Email />
 				<br />
-				<Password logEvent={handleChangePassword} />
+				<Password />
 				<br />
-				<TermsOfService logEvent={handleChangeTOS} />
+				<TermsOfService />
+				<br />
 				<button>Submit</button>
 			</form>
 		</div>
 	);
 }
-
 export default Form;
