@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
-import styled from "styled-components";
 
-function Email() {
-const WrapperDivEmail = styled.div``
-
-	const [email, setEmail] = useState("");
+function Email(props) {
 	return (
-		<WrapperDivEmail>
 			<div className="App">
-				<form>
 					<label>
 						Email
 						<br />
@@ -19,11 +13,10 @@ const WrapperDivEmail = styled.div``
 							id="emailInput"
 							name="email"
 							type="text"
+							onChange={props.logEvent}
 						/>
 					</label>
-				</form>
 			</div>
-		</WrapperDivEmail>
 	);
 }
 

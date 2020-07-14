@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
-import styled from "styled-components";
 
-function TermsOfService() {
-    const WrapperDivTOS = styled.div``;
-	const [name, setName] = useState("");
+
+function TermsOfService(props) {
 	return (
-		<WrapperDivTOS>
 			<div className="App">
-				<form>
 					<label>
 						Terms of Service
-						<input type="checkbox" name="nameOfChoice" value="yes" />
+						<input
+							type="checkbox"
+							name="TOS"
+							value="yes"
+							onChange={props.logEvent}
+						/>
 					</label>
-				</form>
 			</div>
-		</WrapperDivTOS>
 	);
 }
 

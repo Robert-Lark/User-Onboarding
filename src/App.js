@@ -32,14 +32,13 @@ function App() {
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		width: 98.5%;
-
+		width: 97%;
 	`;
 	return (
 		<WrapperDiv>
 			<div>
 				<Rotate>
-					<img src={Logo} width="200" height="200" alt="Photo of 3 cats" />
+					<img src={Logo} width="200" height="200" alt="logo" />
 				</Rotate>
 				<Form />
 			</div>

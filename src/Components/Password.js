@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
-import styled from "styled-components";
 
-function Password() {
-    const WrapperDivPass = styled.div``;
-	const [name, setName] = useState("");
+
+function Password(props) {
 	return (
-		<WrapperDivPass>
 			<div className="App">
-				<form>
 					<label>
 						Password
 						<br />
@@ -18,11 +14,10 @@ function Password() {
 							id="passwordInput"
 							name="password"
 							type="text"
+							onChange={props.logEvent}
 						/>
 					</label>
-				</form>
 			</div>
-		</WrapperDivPass>
 	);
 }
 
