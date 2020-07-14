@@ -3,7 +3,7 @@ import Logo from "./Logo.png";
 import "./App.css";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
-import Form from "./Components/Form.js";
+import Form2 from "./SecondAttempt/Form2.js";
 
 function App() {
 	const WrapperDiv = styled.div`
@@ -14,6 +14,7 @@ function App() {
 		justify-content: center;
 		align-items: center;
 		background-color: #fffaf0;
+		border: 20px solid black;
 	`;
 	const rotate = keyframes`
   from {
@@ -40,7 +41,7 @@ function App() {
 				<Rotate>
 					<img src={Logo} width="200" height="200" alt="logo" />
 				</Rotate>
-				<Form />
+				<Form2 />
 			</div>
 		</WrapperDiv>
 	);

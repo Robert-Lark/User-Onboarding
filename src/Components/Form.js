@@ -10,17 +10,12 @@ function Form(props) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 	};
-	 useEffect(() => {
-			formEmailSchema.isValid(formState).then((valid) => {
-				setButtonDisabled(!valid);
-			});
-		}, [formState]);
 	return (
 		<div className="App">
 			<form onSubmit={handleSubmit}>
 				<Name />
 				<br />
-				<Email />
+				<Email event={}/>
 				<br />
 				<Password />
 				<br />

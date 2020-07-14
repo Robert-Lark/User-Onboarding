@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
 import * as Yup from "yup";
 
@@ -21,6 +21,27 @@ const formEmailSchema = Yup.object().shape({
 const [emailErrors, setErrors] = useState({
 	email: "",
 });
+
+	Yup
+		.reach(formEmailSchema, props.event.target.name)
+		.validate(props.event.target.value)
+		.then(valid => {
+			setErrors({
+				...emailErrors,
+				[props.event.target.name]: ""
+			});
+		})
+		.catch(err => {
+			setErrors({
+				...emailErrors,
+				[props.event.target.name]: err.errors[0]
+			});
+		});
+	setEmail({
+		...email,
+		[props.event.target.name]: props.event.target.value
+	});
+
 	return (
 		<div className="App">
 			<label htmlFor="email">
