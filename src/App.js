@@ -1,68 +1,47 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import React from "react";
+import Logo from "./Logo.png";
 import "./App.css";
 import styled from "styled-components";
+import { keyframes } from "styled-components";
+import Form from "./Components/Form.js";
 
 function App() {
 	const WrapperDiv = styled.div`
 		width: 100vw;
 		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 		background-color: #fffaf0;
 	`;
-	const [name, setName] = useState("");
-	const [artist, setArtist] = useState("");
+	const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+	const Rotate = styled.div`
+		display: inline-block;
+		animation: ${rotate} 10s linear infinite;
+		padding: 2rem 1rem;
+		font-size: 1.2rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 98.5%;
+
+	`;
 	return (
 		<WrapperDiv>
-			<div className="App">
-				<h3>The name is {name || "unknown"} </h3>
-				<h3>The Favorite Artist is {artist || "unknown"} </h3>
-				<form>
-					<label>
-						Name
-						<input
-							placeholder="Name"
-							id="fArtistInput"
-							name="fArtist"
-							type="text"
-							onChange={(event) => {
-								setName(event.target.value);
-								event.preventDefault();
-							}}
-						/>
-						<br />
-						<label>
-							RSVP:
-							<input
-								name="isGoing"
-								type="checkbox"
-								checked={false}
-								onChange={handleInputChange}
-							/>
-						</label>
-						<input
-							type="checkbox"
-							name="nameOfChoice"
-							value="1"
-							checked
-						></input>
-						<label htmlFor="favArtistSelect">Favorite Artist</label>
-						<select
-							onChange={(event) => {
-								setArtist(event.target.value);
-								event.preventDefault();
-							}}
-							id="favArtistSelect"
-						>
-							<option />
-							<option>Nils Frahm</option>
-							<option>Pan and Me</option>
-							<option value="1">Haxan Cloak</option>
-							<option>Max Richter</option>
-							<option>Loscil</option>
-						</select>
-					</label>
-					<input type="submit" />
-				</form>
+			<div>
+				<Rotate>
+					<img src={Logo} width="200" height="200" alt="Photo of 3 cats" />
+				</Rotate>
+				<Form />
 			</div>
 		</WrapperDiv>
 	);
