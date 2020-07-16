@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import * as Yup from "yup";
 
-
 function Email(props) {
 	const defaultEmailState = { email: "" };
 	const [email, setEmail] = useState(defaultEmailState);
@@ -23,23 +22,23 @@ const [emailErrors, setErrors] = useState({
 });
 
 	Yup
-		.reach(formEmailSchema, props.event.target.name)
-		.validate(props.event.target.value)
+		.reach(formEmailSchema, event.target.name)
+		.validate(event.target.value)
 		.then(valid => {
 			setErrors({
 				...emailErrors,
-				[props.event.target.name]: ""
+				[event.target.name]: ""
 			});
 		})
 		.catch(err => {
 			setErrors({
 				...emailErrors,
-				[props.event.target.name]: err.errors[0]
+				[event.target.name]: err.errors[0]
 			});
 		});
 	setEmail({
 		...email,
-		[props.event.target.name]: props.event.target.value
+		[event.target.name]: event.target.value
 	});
 
 	return (

@@ -39,7 +39,6 @@ function Form() {
 	});
 
 	useEffect(() => {
-		// formSchema.isValid(formState).then(valid => setButtonDisabled(!valid));
 		if (formState.terms) {
 			setButtonDisabled(!formState.terms);
 		}

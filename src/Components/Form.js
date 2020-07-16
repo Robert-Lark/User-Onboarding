@@ -15,7 +15,7 @@ function Form(props) {
 			<form onSubmit={handleSubmit}>
 				<Name />
 				<br />
-				<Email event={}/>
+				<Email />
 				<br />
 				<Password />
 				<br />

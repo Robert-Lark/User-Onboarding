@@ -3,8 +3,9 @@ import Logo from "./Logo.png";
 import "./App.css";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
-import Form2 from "./SecondAttempt/Form2.js";
-
+// import Form2 from "./SecondAttempt/Form2.js";
+// import Form from './Components/Form.js';
+import Form3 from './ThirdAttempt/Form3.js';
 function App() {
 	const WrapperDiv = styled.div`
 		width: 100vw;
@@ -41,7 +42,7 @@ function App() {
 				<Rotate>
 					<img src={Logo} width="200" height="200" alt="logo" />
 				</Rotate>
-				<Form2 />
+				<Form3 />
 			</div>
 		</WrapperDiv>
 	);

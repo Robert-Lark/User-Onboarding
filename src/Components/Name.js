@@ -11,12 +11,12 @@ function Name() {
 			[event.target.name]: event.target.value,
 		});
     };
-    const formNameSchema = Yup.object().shape({
-    name: Yup
-        .string()
-        .name()
-        .required("Name is required")
-    })
+    // const formNameSchema = Yup.object().shape({
+    // name: Yup
+    //     .string()
+    //     .name()
+    //     .required("Name is required")
+    // })
     const [nameErrors, setErrors] = useState({
 			name: ""
 		});
