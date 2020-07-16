@@ -94,12 +94,21 @@ function Form3() {
                 />
                 <br />
                 <br />
+                <select>
+                    <option>SELECT YOUR ROLE</option>
+                    <option>UI</option>
+                    <option>FRONTEND</option>
+                    <option>BACKEND</option>
+                </select>
+                <br />
+                <br />
                 <label className="terms" htmlFor="terms">
                     <input name="terms" type="checkbox" onChange={changeHandler} />
 					Terms & Conditions
 				</label>
                 <br />
                 <br />
+                
                 <button>Submit</button>
                 <pre>
                     USERINFO:{JSON.stringify(users)}
